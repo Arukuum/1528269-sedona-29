@@ -24,7 +24,7 @@
 }
 
 
-body {
+.page-body {
 
 	font-family: "PT Sans", Arial, sans-serif;
 	font-size: 14px;
@@ -32,6 +32,7 @@ body {
 	text-transform: uppercase;
 	background-color: var(--basic-color);
 	text-align: center;
+	font-weight: normal;
 }
 
 .main-block {
@@ -42,39 +43,39 @@ body {
 }
 
 .page a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Main navigation */
 
 .main-nav {
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: bold;
-  color: var(--basic-black);
-  background-color: var(--basic-white);
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: bold;
+	color: var(--basic-black);
+	background-color: var(--basic-white);
 }
 
 .site-navigation {
-  list-style: none;
+	list-style: none;
 }
 
 .site-navigation a:link {
-  color: var(--basic-black);
+	color: var(--basic-black);
 }
 
 .site-navigation a:hover,
 .site-navigation a:focus {
-  color: var(--basic-blue);
+ 	color: var(--basic-blue);
 }
 
 .site-navigation a:active {
-  color: var(--basic-opacity);
+	color: var(--basic-opacity);
 }
 
 
@@ -147,6 +148,7 @@ img {
 	font: inherit;
 	font-size: 21px;
 	line-height: 26px;
+	font-weight: bold;
   	text-align: center;
   	color: var(--basic-white);
   	vertical-align: middle;
@@ -186,11 +188,11 @@ img {
 }
 
 .social ul {
-  list-style: none;
+	list-style: none;
 }
 
 .social-button {
-  color: inherit;
+	color: inherit;
 }
 
 .copyright p {
