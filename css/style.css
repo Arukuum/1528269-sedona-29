@@ -16,11 +16,11 @@
 	--basic-blue: #81B3D2;
 	--basic-darkblue: #669EC0;
 	--basic-darkenblue: #5496BD;
+	--dark: #666666;
 	--basic-opacity: rgba(0,0,0,0.3);
 	--footer-back: rgba(255, 255, 255, 0.9);
 	--opacity-white: rgba(255,255,255,0.3);
 	--shadow:rgba(0, 1, 1, 0.2);
-
 }
 
 
@@ -77,6 +77,12 @@ img {
 .site-navigation a:active {
 	color: var(--basic-opacity);
 }
+
+.hotels-link {
+	pointer-events: none;
+	color: var(--basic-lightbrown);
+}	
+
 
 
 /* Features */
@@ -167,11 +173,116 @@ img {
   	color: var(--opacity-white);
 }
 
+
+/*Sorting hotels*/
+
+.hotels-list {
+  	background-color: var(--basic-white);
+}
+
+
+.sorting-block span {
+	font-size: 21px;
+	line-height: 26px;
+	font-weight: bold;
+}
+
+.sorting-range {
+	font-size: 12px;
+	line-height: 18px;
+	list-style: none;
+}
+
+
+.sorting-range li a:link {
+	color: var(--basic-opacity);
+	text-decoration:underline;
+	text-decoration-style: dotted;
+}
+
+.sorting-range li a:visited {
+	color: var(--basic-opacity);
+}
+
+.sorting-range li a:hover,
+.sorting-range li a:focus {
+ 	color: var(--basic-blue);
+ 
+}
+
+.sorting-range li a:active {
+	color: var(--basic-black);
+	text-decoration:none;
+}
+
+.sorting-range li.active a {
+	pointer-events: none;
+	color: var(--basic-blue);
+	text-decoration:none;
+}
+
+/*Hotels result*/
+
+.results {
+	list-style: none;
+}
+
+.result-item h2 {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.result-item a {
+	color: var(--basic-black);
+}
+
+
+.result-item a:hover,
+.result-item a:focus {
+ 	color: var(--basic-blue);
+ 
+}
+
+.result-item a:active {
+	color: var(--basic-opacity);
+}
+
+
+.result-item button {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: bold;
+	color: var(--basic-white);
+	text-transform: uppercase;
+	border: none;
+}
+
+.result-item span:last-child {
+	color: var(--dark);
+	background: var(--basic-color);
+	padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 12px;
+}
+
+.detail-button {
+	background: var(--basic-blue);
+}
+
+.reservation-button {
+	background: var(--basic-lightbrown);
+}
 /* Footer */
 
 .main-footer {
 	background-color: var(--footer-back);
 }
+
+.hotels-footer {
+  	background-color: var(--basic-white);
+}
+
 
 .contacts a,
 .contacts p {
@@ -199,3 +310,5 @@ img {
 	font-size: 14px;
 	line-height: 26px;
 }
+
+
