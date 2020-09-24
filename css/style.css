@@ -193,33 +193,27 @@ img {
 	list-style: none;
 }
 
-
-.sorting-range li a:link {
+.sort-type a {
 	color: var(--basic-opacity);
 	text-decoration:underline;
 	text-decoration-style: dotted;
 }
 
-.sorting-range li a:visited {
-	color: var(--basic-opacity);
+.sort-type a:hover,
+.sort-type a:focus {
+	color: var(--basic-blue);
 }
 
-.sorting-range li a:hover,
-.sorting-range li a:focus {
- 	color: var(--basic-blue);
- 
-}
-
-.sorting-range li a:active {
+.sort-type a:active {
 	color: var(--basic-black);
 	text-decoration:none;
 }
 
-.sorting-range li.active a {
-	pointer-events: none;
+.active a {
 	color: var(--basic-blue);
 	text-decoration:none;
 }
+
 
 /*Hotels result*/
 
@@ -257,9 +251,9 @@ img {
 	border: none;
 }
 
-.result-item span:last-child {
+.rating-number {
 	color: var(--dark);
-	background: var(--basic-color);
+	background-color: var(--basic-color);
 	padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 15px;
@@ -267,11 +261,11 @@ img {
 }
 
 .detail-button {
-	background: var(--basic-blue);
+	background-color: var(--basic-blue);
 }
 
 .reservation-button {
-	background: var(--basic-lightbrown);
+	background-color: var(--basic-lightbrown);
 }
 /* Footer */
 
