@@ -40,6 +40,9 @@
 	box-shadow: 0px 5px 15px var(--shadow);
 	margin-left: auto;
     margin-right: auto;
+    min-height: 100%;
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
 }
 
 .page a {
@@ -51,6 +54,12 @@ img {
 	height: auto;
 }
 
+.page {
+  height: 100%;
+}
+
+
+
 /* Main navigation */
 
 .main-nav {
@@ -58,12 +67,16 @@ img {
 	line-height: 26px;
 	font-weight: bold;
 	color: var(--basic-black);
-	background-color: var(--basic-white);
+	background-color: var(--basic-white); 
 }
+
 
 .site-navigation {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
+
 
 .site-navigation a:link {
 	color: var(--basic-black);
@@ -99,27 +112,66 @@ img {
 
 
 .features-main {
-	list-style: none;}
+	list-style: none;  
+	margin: 0;
+ 	padding: 0;
+ 	display: grid;
+	grid-template-columns: 400px 400px 400px;
+	grid-template-rows: 586px 256px 256px;
+
+}
 
 .features-item {
 	color: var(--basic-white);
 	text-align: center;
 	background-color: var(--basic-blue);
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
 	
-} 
-
 
 .features-item h2 {
 	font-size: 21px;
 	line-height: 21px;
 }
 
+.item-one {
+ 	display: grid;
+ 	grid-template-columns: 400px 400px 400px;
+	grid-template-rows: 256px 330px;
+}
+
+.town-img {
+	margin: 0;
+ 	padding: 0;
+	grid-column-start: 2;
+	grid-column-end: 4;
+}
+
+.item-two {
+ 	display: grid;
+	grid-template-columns: 400px 400px 400px;
+}
+
+.bridge-img {
+	margin: 0;
+ 	padding: 0;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	order: -1;
+}
 
 
 .highlights {
   	background-color: var(--basic-white);
-}
+  	margin: 0;
+ 	padding: 0;
+  	grid-column-start: 1;
+	grid-column-end: 4;
+  	display: grid;
+  	grid-template-columns: 1fr 1fr 1fr;
 
+}
 
 .highlights-item h2,
 .features-item-text h2 {
@@ -143,11 +195,14 @@ img {
 
 .hotel-search {
 	background-color: var(--basic-white);
+	height: 291px;
 }
 
 .hotel-search h2 {
 	font-size: 30px;
 	line-height: 24px;
+	margin: 0;
+
 }
 
 .search-hotel-button {
@@ -267,16 +322,30 @@ img {
 .reservation-button {
 	background-color: var(--basic-lightbrown);
 }
+
+/* Map */
+
+.map {
+	margin-bottom: -120px;
+}
+
+
+
 /* Footer */
 
 .main-footer {
 	background-color: var(--footer-back);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .hotels-footer {
   	background-color: var(--basic-white);
 }
 
+.contacts {
+	margin-left: 73px;
+}
 
 .contacts a,
 .contacts p {
@@ -292,12 +361,20 @@ img {
   	
 }
 
+
 .social ul {
 	list-style: none;
+	margin: 0;
+	padding: 0; 
 }
 
 .social-button {
 	color: inherit;
+}
+
+.copyright {
+	margin-right: 73px;
+
 }
 
 .copyright p {
