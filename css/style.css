@@ -117,8 +117,6 @@ img {
  	padding: 0;
  	display: grid;
 	grid-template-columns: 400px 400px 400px;
-	grid-template-rows: 586px 256px 256px;
-
 }
 
 .features-item {
@@ -138,7 +136,6 @@ img {
 .item-one {
  	display: grid;
  	grid-template-columns: 400px 400px 400px;
-	grid-template-rows: 256px 330px;
 }
 
 .town-img {
@@ -151,6 +148,7 @@ img {
 .item-two {
  	display: grid;
 	grid-template-columns: 400px 400px 400px;
+
 }
 
 .bridge-img {
@@ -195,7 +193,6 @@ img {
 
 .hotel-search {
 	background-color: var(--basic-white);
-	height: 291px;
 }
 
 .hotel-search h2 {
@@ -343,9 +340,7 @@ img {
   	background-color: var(--basic-white);
 }
 
-.contacts {
-	margin-left: 73px;
-}
+
 
 .contacts a,
 .contacts p {
@@ -372,10 +367,6 @@ img {
 	color: inherit;
 }
 
-.copyright {
-	margin-right: 73px;
-
-}
 
 .copyright p {
 	font-size: 14px;
