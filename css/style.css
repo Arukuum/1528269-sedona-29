@@ -17,6 +17,7 @@
 	--basic-darkblue: #669EC0;
 	--basic-darkenblue: #5496BD;
 	--dark: #666666;
+	--border: #E5E5E5;
 	--basic-opacity: rgba(0,0,0,0.3);
 	--footer-back: rgba(255, 255, 255, 0.9);
 	--opacity-white: rgba(255,255,255,0.3);
@@ -117,6 +118,7 @@ img {
  	padding: 0;
  	display: grid;
 	grid-template-columns: 400px 400px 400px;
+
 }
 
 .features-item {
@@ -125,6 +127,7 @@ img {
 	background-color: var(--basic-blue);
 	grid-column-start: 1;
 	grid-column-end: 4;
+
 }
 	
 
@@ -143,6 +146,11 @@ img {
  	padding: 0;
 	grid-column-start: 2;
 	grid-column-end: 4;
+}
+
+.town-img img,
+.bridge-img img {
+	display:block;
 }
 
 .item-two {
@@ -271,6 +279,14 @@ img {
 
 .results {
 	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+.sorting-block,
+.result-item {
+	border-bottom: 1px solid var(--border);
 }
 
 .result-item h2 {
@@ -279,7 +295,7 @@ img {
 }
 
 .result-item a {
-	color: var(--basic-black);
+	color: var(--basic-black); 
 }
 
 
@@ -310,6 +326,7 @@ img {
     padding-bottom: 3px;
     padding-left: 15px;
     padding-right: 12px;
+   	width: 110px;
 }
 
 .detail-button {
@@ -372,5 +389,4 @@ img {
 	font-size: 14px;
 	line-height: 26px;
 }
-
 
