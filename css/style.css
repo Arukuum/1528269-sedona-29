@@ -26,7 +26,6 @@
 
 
 .page-body {
-
 	font-family: "PT Sans", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 21px;
@@ -64,24 +63,51 @@ img {
 /* Main navigation */
 
 .main-nav {
+	display: flex;
+	flex-direction: column;
 	font-size: 14px;
 	line-height: 26px;
 	font-weight: bold;
 	color: var(--basic-black);
-	background-color: var(--basic-white); 
 }
 
+.main-header-logo {
+	width: 138px;
+	height: 70px;
+	position: absolute;
+	align-self: center;
+}
 
 .site-navigation {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	list-style: none;
+	align-items: center;
 	margin: 0;
-	padding: 0;
+	padding-left: 73px;
+	padding-right: 73px; 
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: var(--basic-white);
 }
 
+.site-navigation li {
+	flex-basis: 229px;
+	text-align: right;
+}
+
+.site-navigation li:nth-child(2) {
+	margin-right: auto;
+}
+
+.site-navigation li:nth-child(-n+2){
+	text-align: left;
+}
 
 .site-navigation a:link {
 	color: var(--basic-black);
-}
+} 
 
 .site-navigation a:hover,
 .site-navigation a:focus {
@@ -118,7 +144,6 @@ img {
  	padding: 0;
  	display: grid;
 	grid-template-columns: 400px 400px 400px;
-
 }
 
 .features-item {
@@ -127,13 +152,13 @@ img {
 	background-color: var(--basic-blue);
 	grid-column-start: 1;
 	grid-column-end: 4;
-
 }
 	
 
 .features-item h2 {
 	font-size: 21px;
 	line-height: 21px;
+	margin-top: 47px;
 }
 
 .item-one {
@@ -182,11 +207,16 @@ img {
 .highlights-item h2,
 .features-item-text h2 {
 	color: var(--basic-black);
+	margin-top: 47px;
 }
 
 .highlights-item p,
 .features-item-text p {
 	color: var(--basic-thinblack);
+}
+
+.features-item-text p {
+	padding-bottom: 54px;
 }
 
 .features-item-text {
@@ -240,17 +270,32 @@ img {
   	background-color: var(--basic-white);
 }
 
+.sorting-block {
+	display: flex;
+	padding-left: 73px;
+  	padding-right: 73px;
+}
 
 .sorting-block span {
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: bold;
+	margin-right: 46px;  	
 }
 
 .sorting-range {
 	font-size: 12px;
 	line-height: 18px;
 	list-style: none;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	justify-content: flex-start;
+}
+
+.sorting-range li {
+	margin-right: 30px;
 }
 
 .sort-type a {
@@ -377,16 +422,32 @@ img {
 .social ul {
 	list-style: none;
 	margin: 0;
-	padding: 0; 
+	padding: 0;
+	width: 400px;
+	display: flex;
+	justify-content: center;
+	
 }
 
 .social-button {
 	color: inherit;
+	margin-right: 6px;
 }
 
+.copyright { 
+	display: flex;
+	align-items: center;
+	width: 400px;
+	justify-content: center;
+}
 
 .copyright p {
 	font-size: 14px;
 	line-height: 26px;
+	margin-right: 10px;
 }
 
+.copyright a {
+    width: 115px;
+    height: 41px;
+}
