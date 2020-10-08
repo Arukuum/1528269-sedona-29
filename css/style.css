@@ -22,7 +22,7 @@
 	--basic-opacity: rgba(0,0,0,0.3);
 	--footer-back: rgba(255, 255, 255, 0.9);
 	--opacity-white: rgba(255,255,255,0.3);
-	--shadow:rgba(0, 1, 1, 0.2);
+	--shadow: rgba(0, 1, 1, 0.2);
 }
 
 
@@ -256,7 +256,7 @@ img {
 	margin-bottom: 82px;
 }
 
-.highlights-house h2:before {
+.highlights-house h2::before {
 	content: "";
 	position: absolute;
 	top: 60px;
@@ -268,7 +268,7 @@ img {
 	
 }
 
-.highlights-food h2:before {
+.highlights-food h2::before {
 	content: "";
 	position: absolute;
 	top: 60px;
@@ -280,7 +280,7 @@ img {
 	
 }
 
-.highlights-present h2:before {
+.highlights-present h2::before {
 	content: "";
 	position: absolute;
 	top: 60px;
@@ -387,7 +387,7 @@ img {
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: bold;
-	margin-right: 46px;  	
+	margin-right: 46px;
 }
 
 .sorting-range {
@@ -409,8 +409,7 @@ img {
 
 .sort-type a {
 	color: var(--basic-opacity);
-	text-decoration:underline;
-	text-decoration-style: dotted;
+	border-bottom: 1px dotted var(--basic-blue);
 }
 
 .sort-type a:hover,
@@ -420,13 +419,40 @@ img {
 
 .sort-type a:active {
 	color: var(--basic-black);
-	text-decoration:none;
+	border-bottom: none;
 }
 
 .active a {
 	color: var(--basic-blue);
-	text-decoration:none;
+	border-bottom: none;
 }
+
+
+.sorting-list {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+	width: 34px;
+	justify-content: space-between;
+	align-self: center;
+}
+
+.sorting-item:hover path,
+.sorting-item:focus path {
+    fill: var(--basic-black);
+}
+
+.sorting-item:active path {
+    fill: var(--basic-blue);
+}
+
+.sort-down path {
+	fill: var(--basic-blue);
+}
+
+
 
 
 /*Hotels result*/
@@ -463,6 +489,17 @@ img {
 	text-align: left;
 }
 
+.result-item-text .item-list {
+	margin-top: 7px;
+	margin-bottom: 15px;
+	display: flex;
+}
+
+.item-list span {
+	flex-basis: 110px;
+	margin-right: 7px; 
+}
+
 
 .result-item h2 {
 	font-size: 21px;
@@ -472,52 +509,101 @@ img {
     margin-top: -5px;
 }
 
-.result-item a {
+.name-hotel {
 	color: var(--basic-black); 
 }
 
-
-.result-item a:hover,
-.result-item a:focus {
+.name-hotel:hover,
+.name-hotel:focus {
  	color: var(--basic-blue);
  
 }
 
-.result-item a:active {
+.name-hotel:active {
 	color: var(--basic-opacity);
 }
 
+.item-button {
+	margin: 0;
+}
 
-.result-item button {
+.item-button .button {
 	font-size: 14px;
 	line-height: 21px;
 	font-weight: bold;
 	color: var(--basic-white);
 	text-transform: uppercase;
-	border: none;
+	display: inline-block;
+	padding: 3px 17px 3px 16px;
 }
 
-.rating-number {
-	color: var(--dark);
-	background-color: var(--basic-color);
-	margin-left: auto;
-	padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 15px;
-    padding-right: 12px;
-   	width: 110px;
-   	align-self: flex-end;
-}
 
 .detail-button {
 	background-color: var(--basic-blue);
+	margin-right: 3px;
+}
+
+.detail-button:hover,
+.detail-button:focus {
+ 	background-color: var(--basic-darkblue);
+}
+
+.detail-button:active {
+	color: var(--opacity-white);
+	background-color: var(--basic-darkenblue);
 }
 
 .reservation-button {
 	background-color: var(--basic-lightbrown);
 }
 
+.reservation-button:hover, 
+.reservation-button:focus {
+	background-color: var(--basic-brown);
+} 
 
+.reservation-button:active {
+	color: var(--opacity-white);
+	background-color: var(--basic-darkbrown);
+} 
+
+
+
+.rating-number {
+	color: var(--dark);
+	background-color: var(--basic-color);
+	margin-left: auto;
+    margin-top: 64px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 21px;
+   	width: 110px;
+   	align-self: flex-end;
+   	position: relative;
+}
+
+.rating-number::before {
+	content: "";
+	position: absolute;
+	top: -64px;
+	right: 0;
+	width: 110px;
+	height: 17px;
+	background-image: url("../img/star.svg");
+	background-repeat: space;
+}
+
+.star-four::before {
+	width: 90px;
+}
+
+.star-three::before {
+	width: 65px;
+}
+
+.star-two::before {
+	width: 41px;
+}
 
 
 /* Footer */
@@ -621,4 +707,13 @@ img {
 
 .copyright:active path {
     fill: var(--special);
+}
+
+/*Filter hotels*/
+
+.filter-hotels{
+	background-image: url("../img/background.jpg");
+	width: 1200px;
+	height: 217px;
+	background-repeat: no-repeat;
 }
