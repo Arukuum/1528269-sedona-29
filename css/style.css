@@ -714,6 +714,6 @@ img {
 .filter-hotels{
 	background-image: url("../img/background.jpg");
 	width: 1200px;
-	height: 217px;
+	min-height: 217px;
 	background-repeat: no-repeat;
-}
+	background-size: cover;
