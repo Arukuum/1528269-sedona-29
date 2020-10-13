@@ -19,11 +19,13 @@
 	--dark: #666666;
 	--border: #E5E5E5;
 	--special: #BDBBBC;
+	--tooggle: #ABABAB;
 	--basic-opacity: rgba(0,0,0,0.3);
-	--footer-back: rgba(255, 255, 255, 0.9);
+	--footer-back: rgba(255,255,255,0.9);
 	--opacity-white: rgba(255,255,255,0.3);
-	--shadow: rgba(0, 1, 1, 0.2);
-	--shadow-form: rgba(0, 1, 1, 0.15);
+	--shadow: rgba(0,1,1,0.2);
+	--shadow-form: rgba(0,1,1,0.15);
+	--shadow-toggle: rgba(171,171,171,0.3);
 }
 
 
@@ -403,6 +405,9 @@ img {
 	padding: 4px 11px 4px 11px;
 }	
 
+.form-item input::placeholder { 
+	color: var(--basic-black);
+}
 
 .modal-form .adults,
 .modal-form .child {
@@ -455,15 +460,11 @@ img {
 	cursor: pointer;
 }
 
-.form-item .minus,{
-	left: 125px;
-}
-
 .form-item .plus {
 	right: 0px;
 }
 
-.minus::before{
+.minus::before {
 	content: "";
 	position: absolute;
 	top: 17px;
@@ -585,7 +586,7 @@ img {
 }
 
 .sorting-range li {
-	margin-right: 30px;
+	margin-right: 35px;
 }
 
 .sort-type a {
@@ -718,7 +719,6 @@ img {
 	padding: 3px 17px 3px 16px;
 }
 
-
 .detail-button {
 	background-color: var(--basic-blue);
 	margin-right: 3px;
@@ -747,8 +747,6 @@ img {
 	color: var(--opacity-white);
 	background-color: var(--basic-darkbrown);
 } 
-
-
 
 .rating-number {
 	position: relative;
@@ -893,12 +891,215 @@ img {
 
 /*Filter hotels*/
 
-.filter-hotels{
+.filter-hotels {
 	width: 1200px;
 	min-height: 217px;
 	background-image: url("../img/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 26px 73px 31px;
 }
+
+.filter {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 14px;
+	line-height: 21px;
+	text-transform: uppercase;
+	color: var(--basic-white);
+	padding: 26px 73px 9px;
+}
+
+.filter fieldset {
+	text-align: left;
+	margin: 0;
+	margin-right: 118px;
+	padding: 0;
+	border: none;
+}
+
+.filter legend {
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: 700;
+	margin-bottom: 24px;
+}
+
+.filter ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.filter-option {
+	margin-bottom: 25px;
+	padding-left: 40px;
+}
+
+.filter-option label {
+	position: relative;
+	display: block;
+	cursor: pointer;
+	user-select: none;
+}
+
+.filter-checkbox + label::before {
+	content: "";
+	position: absolute;
+	left: -40px;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/checkbox-off.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.filter-checkbox:checked + label::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -40px;
+	width: 27px;
+	height: 24px;
+	background-image: url("../img/checkbox-on.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.filter-checkbox:disabled + label::before {
+	content: "";
+	position: absolute;
+	left: -40px;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/checkbox-off-dis.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+} 
+
+.filter-checkbox:checked:disabled + label::before {
+	content: "";
+	position: absolute;
+	left: -40px;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/checkbox-on-dis.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+} 
+
+.filter .filter-price {
+	margin: 0;
+	padding: 0; 
+	margin-left: auto;
+}
+
+.filter-price legend {
+	margin-bottom: 10px;
+}
+
+.range-filter {
+	width: 317px;
+}
+
+.price-controls {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	width: 301px;
+	border: 2px solid var(--basic-white);
+	border-radius: 2px;
+	margin-bottom: 20px;
+	padding: 6px;
+}
+
+.min-price,
+.max-price {
+	margin-left: 60px;
+}
+
+.price-controls input {
+	width: 60px;
+	color: var(--basic-white);
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.max-price::before {
+	content:"";
+	position: absolute;
+	top: 6px;
+	right: 153px;
+	width: 2px;
+	height: 22px;
+	background-color: var(--basic-white);
+}
+
+.range-controls {
+	position: relative;
+	margin-bottom: 33px;
+}
+
+.range-controls .scale {
+	height: 2px;
+	background-color: var(--opacity-white);
+}
+
+.range-controls .bar {
+	width: 253px;
+	height: 2px;
+	background-color: var(--basic-white);
+}
+
+.range-controls .toggle {
+	position: absolute;
+	top: -9px;
+	left: 3;
+	width: 4px;
+	height: 4px;
+	border: 8px solid var(--basic-white);
+	background-color: var(--tooggle);
+	box-shadow: 0 2px 1px 0 var(--shadow-toggle);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.range-controls .toggle-max {
+	left: 253px;
+}
+
+.range-controls .toggle:hover,
+.range-controls .toggle:focus,
+.range-controls .toggle:active {
+	transform: scale(1.2);
+	outline: none;
+}
+
+
+.filter-button {
+	width: 137px;
+	font-size: 14px;
+	line-height: 21px;
+	text-transform: uppercase;
+	color: var(--basic-white);
+	border: 2px solid var(--basic-white);
+	background-color: transparent;
+	margin-left: 90px;
+	margin-right: 95px;
+	padding: 7px 35px;
+}
+
+.filter-button:hover,
+.filter-button:focus,
+.filter-button:active {
+	color: var(--basic-black);
+	background-color: var(--basic-white);
+	outline: none;
+}
+
+
 
