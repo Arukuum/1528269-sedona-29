@@ -87,10 +87,10 @@ img {
 }
 
 .main-header-logo {
-	width: 138px;
-	height: 70px;
 	position: absolute;
 	align-self: center;
+	width: 138px;
+	height: 70px;
 }
 
 .site-navigation {
@@ -140,14 +140,14 @@ img {
 
 
 .intro {
+	display:flex;
+	align-items: center;
+	justify-content: center;
 	background-image: url("../img/shape.png"), url("../img/background_photo.jpg");
 	background-repeat: no-repeat;
 	background-position: bottom, 0 0;
 	width: 1200px;
 	height: 509px;
-	display:flex;
-  	align-items: center;
-  	justify-content: center;
 }
 
 
@@ -565,28 +565,30 @@ img {
   	padding-bottom: 31px;
 }
 
-.sorting-block span {
+.sorting-results {
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: bold;
 	margin-right: 46px;
 }
 
+.sorting-title {
+	font-size: 12px;
+	line-height: 18px;
+	margin-right: 40px;
+}
+
 .sorting-range {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
 	font-size: 12px;
 	line-height: 18px;
 	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+	min-width: 239px;
 	margin: 0;
-	padding: 0;
-	justify-content: flex-start;
-	min-width: 370px;
-}
-
-.sorting-range li {
-	margin-right: 35px;
+	padding: 0; 
 }
 
 .sort-type a {
@@ -611,14 +613,14 @@ img {
 
 
 .sorting-list {
-	list-style: none;
 	display: flex;
+	justify-content: space-between;
+	align-self: center;
+	list-style: none;
+	width: 34px;
 	margin: 0;
 	padding: 0;
 	margin-left: auto;
-	width: 34px;
-	justify-content: space-between;
-	align-self: center;
 }
 
 .sorting-item:hover path,
@@ -841,9 +843,9 @@ img {
 }
 
 .social-button {
-	color: inherit;
 	display: flex;
 	justify-content: center;
+	color: inherit;
 	width: 46px;
 	height: 48px;
 	background-color: var(--basic-blue);
@@ -983,12 +985,18 @@ img {
 	position: absolute;
 	left: -40px;
 	top: 0;
-	width: 24px;
+	width: 27px;
 	height: 24px;
 	background-image: url("../img/checkbox-on-dis.svg");
 	background-repeat: no-repeat;
 	background-position: 0 0;
 } 
+
+.filter-checkbox:focus + label::before {
+	border: 2px solid var(--basic-black);
+	border-radius: 4px;
+}	
+
 
 .filter .filter-price {
 	margin: 0;
