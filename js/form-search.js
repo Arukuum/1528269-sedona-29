@@ -1,43 +1,47 @@
-let PopupLink = document.querySelector(".search-hotel-button");
-let SearchPopup = document.querySelector(".form-search");
-let FormSearch = document.querySelector(".modal-form");
-let ArrivalDate = document.querySelector("#input-date");
-let DepartureDate = document.querySelector("#outcome-date");
-let AdultsNumder = document.querySelector("#adults");
-let ChildNumder = document.querySelector("#child");
+const popupLink = document.querySelector(".search-hotel-button");
+const searchPopup = document.querySelector(".form-search");
+const formSearch = document.querySelector(".modal-form");
+const arrivalDate = document.querySelector("#input-date");
+const departureDate = document.querySelector("#outcome-date");
+const adultsNumder = document.querySelector("#adults");
+const childNumder = document.querySelector("#child");
 
 let isStorageSupport = true;
-let storage = "";
+let storageAdult = "";
+let storageChild = "";
 
 try {
-	storage = localStorage.getItem("adults");
-	storage = localStorage.getItem("child");
+	storageAdult = localStorage.getItem("adults");
+	storageChild = localStorage.getItem("child");
 }	catch (err) {
-	isStorageSupport = false;
+	isStorageSupportAdult = false;
 }
 
-PopupLink.addEventListener("click", function (evt) {
+if (storageAdult) {
+	adultsNumder.value = storageAdult;
+} 
+
+if (storageChild) {
+	childNumder.value = storageChild;
+}
+
+popupLink.addEventListener("click", function (evt) {
 	evt.preventDefault();
-	SearchPopup.classList.toggle("modal-form-close");
-
-	if (storage) {
-    	AdultsNumder.value = storage;
-    	ChildNumder.value = storage;
-	}
-
-	ArrivalDate.focus();
+	searchPopup.classList.toggle("modal-form-close");
+	searchPopup.classList.remove("modal-error");
+	arrivalDate.focus();
 });
 
-FormSearch.addEventListener("submit", function (evt) {
-    if (!ArrivalDate.value || !DepartureDate.value || !AdultsNumder.value) {
+formSearch.addEventListener("submit", function (evt) {
+    if (!arrivalDate.value || !departureDate.value || !adultsNumder.value) {
     	evt.preventDefault();
-    	SearchPopup.classList.add("modal-error");
-    	SearchPopup.offsetWidth = SearchPopup.offsetWidth;
-		SearchPopup.classList.add("modal-error");
+    	searchPopup.classList.remove("modal-error");
+    	searchPopup.offsetWidth = searchPopup.offsetWidth;
+		searchPopup.classList.add("modal-error");
 	}	else {
-		if (isStorageSupport) {
-    	localStorage.setItem("adults", AdultsNumder.value);
-    	localStorage.setItem("child", ChildNumder.value);
+			if (isStorageSupport) {
+			localStorage.setItem("adults", adultsNumder.value);
+			localStorage.setItem("child", childNumder.value);
     	}
-	}
+    }
 });
