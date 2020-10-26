@@ -27,7 +27,7 @@ if (storageChild) {
 
 popupLink.addEventListener("click", function (evt) {
 	evt.preventDefault();
-	searchPopup.classList.toggle("modal-form-close");
+	searchPopup.classList.toggle("modal-form-show");
 	searchPopup.classList.remove("modal-error");
 	arrivalDate.focus();
 });
